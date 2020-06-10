@@ -1,0 +1,7 @@
+{
+  "name": "await",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

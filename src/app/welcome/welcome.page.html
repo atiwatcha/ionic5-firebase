@@ -1,0 +1,30 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-text>
+    <h1>Welcome.</h1>
+    <p>Get started by loggin into<br>your account.</p>
+  </ion-text>
+  <div class="action">
+    <div class="login-buttons">
+      <ion-button routerLink="/login">
+        <ion-avatar>
+          <img src="../../assets//images/Atiwat.jpg" alt="">
+        </ion-avatar>
+        <ion-label>login</ion-label>
+      </ion-button>
+      <ion-button routerLink="/create">
+        <ion-avatar>
+          <img src="../../assets//images/Atiwat.jpg" alt="">
+        </ion-avatar>
+        <ion-label>create</ion-label>
+      </ion-button>
+    </div>
+    <div class="separator">
+      <span>or</span>
+      <span class="line left"></span>
+      <span class="line left"></span>
+    </div>
+    <ion-button class="signup-btn" expand="block" routerLink="/register">Register</ion-button>
+    <p class="login">Existing user? <a>Login now</a></p>
+  </div>
+</ion-content>
+
