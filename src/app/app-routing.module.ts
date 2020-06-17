@@ -33,6 +33,18 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'create-wather-dispenser',
+    loadChildren: () => import('./views/create-wather-dispenser/create-wather-dispenser.module').then( m => m.CreateWatherDispenserPageModule)
+  },
+  {
+    path: 'detail-wather-dispenser',
+    loadChildren: () => import('./views/detail-wather-dispenser/detail-wather-dispenser.module').then( m => m.DetailWatherDispenserPageModule)
+  },
+  {
+    path: 'wather-dispenser',
+    loadChildren: () => import('./views/wather-dispeneser/wather-dispenser.module').then( m => m.WatherDispeneserPageModule)
   }
 ];
 @NgModule({

@@ -34,7 +34,9 @@ export class LoginPage{
     await loading.present();
 
     this.authService.loginUser(this.form.value).then(res => {
-      console.log(res);
+      //console.log(res.user.uid);
+      
+
       loading.dismiss();
         this.router.navigateByUrl('/dashboard');
     }, async err => {

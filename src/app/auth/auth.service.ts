@@ -1,11 +1,12 @@
 import { User } from './user.model';
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { AngularFireAuth } from '@angular/fire/auth';
-
+import * as firebase from 'firebase/app';
 
 
 @Injectable({
@@ -32,7 +33,10 @@ export class AuthService {
     return new Promise<any>((resolve, reject) => {
       this.afAuth.signInWithEmailAndPassword(user.username, user.password)
         .then(
-          res => resolve(res),
+          res => {
+            localStorage.setItem('userUID', res.user.uid);
+            resolve(res)
+          },
           err => reject(err))
     })
   }
@@ -43,6 +47,7 @@ export class AuthService {
         this.afAuth.signOut()
           .then(() => {
             console.log("LOG Out");
+            localStorage.removeItem('userUID');
             resolve();
           }).catch((error) => {
             reject();
@@ -52,7 +57,7 @@ export class AuthService {
   }
 
   userDetails() {
-    return this.afAuth.user
+    return this.afAuth.user;
   }
 
 }

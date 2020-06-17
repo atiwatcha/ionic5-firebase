@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ข้อมูลตู้นํ้า</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">DataTable with minimal features & hover style</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              <table id="example2" class="table table-bordered table-hover">
+                <thead>
+                  <tr>
+                    <th>ตู้นํ้า</th>
+                    <th>วันที่ติดตั้ง</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of items">
+                    <td>{{item.location}}</td>
+                    <td>{{item.installDate}}</td>
+                    <td align="center">
+                      <ion-button (click)="editDetails(item)">แก้ไข</ion-button>
+                      <!-- 
+                      <ion-button (click)="deleteDetails(item)">ลบ</ion-button>
+                      -->
+                      <ion-button (click)="viewDetails(item)">รายละเอียด</ion-button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+
+</ion-content>
+<ion-footer (click)="createDetails()">
+  <ion-toolbar color="secondary">
+    <ion-title>เพิ่มตู้น้ำ</ion-title>
+  </ion-toolbar>
+</ion-footer>

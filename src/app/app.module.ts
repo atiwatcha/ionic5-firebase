@@ -16,6 +16,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 // environment
 import { environment } from '../environments/environment';
@@ -26,7 +27,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule, AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule,AngularFireStorageModule, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
+    AngularFireStorageModule, 
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     StatusBar,

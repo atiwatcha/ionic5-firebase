@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>จัดการข้อมูลตู้นํ้า {{id}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismissModal()">Close</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="bookingForm" (ngSubmit)="formSubmit()">
+      <ion-item>
+        <ion-label position="floating">location</ion-label>
+        <ion-input [formControl]="bookingForm.controls['location']" type="text" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Date</ion-label>
+        <ion-datetime [formControl]="bookingForm.controls['installDate']" required>
+        </ion-datetime>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-button [disabled]="bookingForm.controls['location'].invalid || bookingForm.controls['installDate'].invalid" 
+          expand="block"  type="submit" color="primary" shape="full" expand="block">บันทึกข้อมูล
+        </ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+</ion-content>
